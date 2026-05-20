@@ -1,0 +1,138 @@
+:root {
+  color-scheme: light;
+  --bg: #f7f4ef;
+  --text: #17201a;
+  --muted: #5d6a60;
+  --line: #d9d2c5;
+  --green: #1f7a4d;
+  --green-dark: #125334;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.page {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 56px 0;
+}
+
+.hero {
+  min-height: 54vh;
+  display: grid;
+  align-content: center;
+  gap: 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--green);
+  font-weight: 700;
+}
+
+h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(42px, 8vw, 82px);
+  line-height: 1.02;
+  font-weight: 800;
+}
+
+.intro {
+  max-width: 680px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 0 18px;
+  border: 1px solid var(--green);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.primary {
+  background: var(--green);
+  color: var(--white);
+}
+
+.primary:hover {
+  background: var(--green-dark);
+}
+
+.secondary {
+  color: var(--green-dark);
+  background: transparent;
+}
+
+.workflow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding-top: 28px;
+}
+
+article {
+  min-height: 170px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+article span {
+  display: inline-grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--white);
+  font-weight: 800;
+}
+
+h2 {
+  margin: 18px 0 8px;
+  font-size: 22px;
+}
+
+article p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 760px) {
+  .page {
+    width: min(100% - 28px, 1120px);
+    padding: 34px 0;
+  }
+
+  .workflow {
+    grid-template-columns: 1fr;
+  }
+}

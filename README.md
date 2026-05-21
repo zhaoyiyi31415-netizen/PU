@@ -1,16 +1,41 @@
-# 我的第一个网页项目
+# PU Alliance MVP
 
-这是一个从零创建的静态网页项目，用来连接 Codex、GitHub 和 Vercel。
+PU Alliance is a global resource platform for the rigid polyurethane spray foam insulation industry.
 
-## 工作方式
+This repository currently contains a static deployable MVP for fast Vercel launch. It includes:
 
-1. 你用中文告诉 Codex 想改什么。
-2. Codex 修改网页文件。
-3. Codex 把修改提交到 GitHub。
-4. Vercel 从 GitHub 或当前项目部署网站。
+- International B2B industrial homepage
+- Language switcher for English, Chinese, Russian, Japanese and Thai first-screen copy
+- Raw material resource section
+- Industry chain categories
+- Application scenarios
+- Featured supplier cards
+- Technical library preview
+- Buyer request and supplier joining form placeholders
+- Contact and roadmap sections
 
-## 文件说明
+## Deploy to Vercel
 
-- `index.html`：网页内容
-- `styles.css`：网页样式
-- `vercel.json`：Vercel 部署配置
+Use this import link:
+
+https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fzhaoyiyi31415-netizen%2FPU
+
+Vercel can deploy this static MVP without npm installation.
+
+## Future Next.js Version
+
+A full Next.js App Router implementation has also been prepared locally in the Codex workspace. When package download/network access is available, it can replace this static version with:
+
+- Next.js App Router
+- Tailwind CSS
+- next-intl JSON i18n
+- Dynamic supplier detail routes
+- Mock data modules
+- API placeholders for leads and supplier applications
+- Future database adapter boundaries
+
+## Domain
+
+Target domain: www.pualliance.com
+
+After importing the project in Vercel, add the domain in Vercel Project Settings > Domains.

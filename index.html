@@ -1,42 +1,149 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>我的第一个网页</title>
+    <title>PU Alliance | Global PU Spray Foam Insulation Resource Platform</title>
+    <meta name="description" content="PU Alliance connects global raw material suppliers, polyurethane system houses, spray foam equipment manufacturers, contractors, researchers and project owners in the rigid PU spray foam insulation industry.">
+    <meta name="keywords" content="PU spray foam, polyurethane insulation, rigid PU foam, spray foam equipment, polyol supplier, polyurethane system house, spray foam contractor">
+    <link rel="canonical" href="https://www.pualliance.com/">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <main class="page">
+    <header class="site-header">
+      <a class="brand" href="#home">PU Alliance</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#resources">Resources</a>
+        <a href="#raw-materials">Raw Materials</a>
+        <a href="#applications">Applications</a>
+        <a href="#suppliers">Suppliers</a>
+        <a href="#library">Technical Library</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <select id="language" aria-label="Language selector">
+          <option value="en">English</option>
+          <option value="zh">中文</option>
+          <option value="ru">Русский</option>
+          <option value="ja">日本語</option>
+          <option value="th">ไทย</option>
+        </select>
+        <a class="button small primary" href="#post-request" data-i18n="postButton">Post Request</a>
+      </div>
+    </header>
+
+    <main id="home">
       <section class="hero">
-        <p class="eyebrow">Codex + GitHub + Vercel 工作流</p>
-        <h1>你好，这是我的第一个网页。</h1>
-        <p class="intro">
-          这个页面由 Codex 创建，代码保存到 GitHub，并可以通过 Vercel 发布到互联网。
-        </p>
-        <div class="actions">
-          <a class="button primary" href="https://github.com/zhaoyiyi31415-netizen" target="_blank" rel="noreferrer">查看 GitHub</a>
-          <a class="button secondary" href="#workflow">了解流程</a>
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="eyebrow">Global PU Insulation Value Chain</p>
+          <h1 data-i18n="title">PU Alliance</h1>
+          <h2 data-i18n="subtitle">Global Resource Platform for Rigid PU Spray Foam Insulation</h2>
+          <p data-i18n="description">Connecting raw material suppliers, system houses, spray equipment manufacturers, contractors, researchers and project owners worldwide.</p>
+          <div class="actions">
+            <a class="button primary" href="#resources" data-i18n="explore">Explore Resources</a>
+            <a class="button secondary" href="#post-request" data-i18n="post">Post Buying Request</a>
+            <a class="button secondary" href="#join" data-i18n="join">Join Supplier Directory</a>
+          </div>
+          <form class="search" id="searchForm">
+            <input id="searchInput" data-i18n-placeholder="searchPlaceholder" placeholder="Search products, suppliers, equipment, contractors or technical resources">
+            <button type="submit">Search</button>
+          </form>
+          <div class="keywords" id="keywords"></div>
+        </div>
+        <div class="hero-panel" aria-label="Supply chain map">
+          <div class="map-grid">
+            <span>Polyol</span><span>MDI</span><span>System House</span><span>Equipment</span><span>Contractor</span><span>Cold Storage</span><span>Roof</span><span>Certification</span>
+          </div>
         </div>
       </section>
 
-      <section id="workflow" class="workflow" aria-label="工作流">
-        <article>
-          <span>1</span>
-          <h2>说出想法</h2>
-          <p>你用中文告诉 Codex 想做什么。</p>
-        </article>
-        <article>
-          <span>2</span>
-          <h2>保存代码</h2>
-          <p>Codex 修改项目并提交到 GitHub。</p>
-        </article>
-        <article>
-          <span>3</span>
-          <h2>自动上线</h2>
-          <p>Vercel 读取 GitHub 代码并生成网站。</p>
-        </article>
+      <section id="resources" class="section">
+        <div class="section-head">
+          <p class="eyebrow" data-i18n="resourcesEyebrow">Industry Chain</p>
+          <h2 data-i18n="resourcesTitle">Industry Chain Resources</h2>
+          <p data-i18n="resourcesText">Navigate the full rigid PU spray foam insulation value chain by supplier role and project need.</p>
+        </div>
+        <div class="cards" id="resourceCards"></div>
+      </section>
+
+      <section id="raw-materials" class="section muted">
+        <div class="section-head">
+          <p class="eyebrow">Raw Materials</p>
+          <h2 data-i18n="rawTitle">Raw Material Resources</h2>
+        </div>
+        <div class="compact-grid" id="rawMaterials"></div>
+      </section>
+
+      <section id="applications" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Applications</p>
+          <h2 data-i18n="applicationsTitle">Application Scenarios</h2>
+        </div>
+        <div class="cards three" id="applicationsGrid"></div>
+      </section>
+
+      <section id="suppliers" class="section muted">
+        <div class="section-head">
+          <p class="eyebrow">Directory</p>
+          <h2 data-i18n="suppliersTitle">Featured Suppliers</h2>
+        </div>
+        <div class="cards three" id="suppliersGrid"></div>
+      </section>
+
+      <section id="library" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Knowledge</p>
+          <h2 data-i18n="libraryTitle">Technical Library</h2>
+        </div>
+        <div class="article-list" id="articles"></div>
+      </section>
+
+      <section id="post-request" class="split-cta">
+        <div>
+          <h2 data-i18n="buyerTitle">For Buyers: Post Buying Request</h2>
+          <p data-i18n="buyerText">Tell suppliers what you need, including product, application, quantity, country and technical requirements.</p>
+        </div>
+        <form class="mini-form" id="buyerForm">
+          <input placeholder="Product / Material">
+          <input placeholder="Target country">
+          <input type="email" placeholder="Email">
+          <textarea placeholder="Requirement description"></textarea>
+          <button class="button primary" type="submit" data-i18n="submit">Submit</button>
+        </form>
+      </section>
+
+      <section id="join" class="split-cta light">
+        <div>
+          <h2 data-i18n="supplierTitle">For Suppliers: Join Supplier Directory</h2>
+          <p data-i18n="supplierText">List your company and make your PU insulation resources discoverable by international buyers.</p>
+        </div>
+        <form class="mini-form" id="supplierForm">
+          <input placeholder="Company name">
+          <input placeholder="Company type">
+          <input type="email" placeholder="Email">
+          <textarea placeholder="Main products and export markets"></textarea>
+          <button class="button primary" type="submit" data-i18n="submit">Submit</button>
+        </form>
+      </section>
+
+      <section id="contact" class="section contact">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2 data-i18n="contactTitle">Contact PU Alliance</h2>
+          <p>info@pualliance.com<br>contact@pualliance.com<br>suppliers@pualliance.com<br>buyers@pualliance.com</p>
+        </div>
+        <div class="roadmap">
+          <h3>Future Versions</h3>
+          <p>Supplier backend, buyer backend, inquiry matching, membership tiers, CMS, advertising, industry reports and AI-assisted supplier matching are reserved for later versions.</p>
+        </div>
       </section>
     </main>
+
+    <footer>
+      <strong>PU Alliance</strong>
+      <span>© 2026 PU Alliance. Global Resource Platform for Rigid PU Spray Foam Insulation.</span>
+    </footer>
+
+    <script src="app.js"></script>
   </body>
 </html>
